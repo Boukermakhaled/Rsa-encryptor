@@ -34,7 +34,7 @@ const translations = {
       </ul>
     `,
     navbarBrand: "RSA Tool",
-    navLinks: ["Home", "About", "Tutorial", "Contact"],
+    navLinks: ["Home", "About", "Tutorial", "Contact", "ecc"],
     footerLinks: ["Privacy Policy", "Terms of Service", "GitHub", "Documentation"],
     copyright: "© 2023 RSA Encryption Tool. All rights reserved.",
     aboutAlert: "This is an RSA encryption/decryption tool. It demonstrates how RSA algorithm works for educational purposes.",
@@ -75,7 +75,7 @@ const translations = {
       </ul>
     `,
     navbarBrand: "أداة RSA",
-    navLinks: ["الرئيسية", "حول", "الشرح", "اتصل بنا"],
+    navLinks: ["الرئيسية", "حول", "الشرح", "اتصل بنا", "ecc"],
     footerLinks: ["سياسة الخصوصية", "شروط الخدمة", "جيت هاب", "التوثيق"],
     copyright: "© 2023 أداة تشفير RSA. جميع الحقوق محفوظة.",
     aboutAlert: "هذه أداة لتشفير وفك تشفير RSA. تشرح كيفية عمل خوارزمية RSA لأغراض تعليمية.",
