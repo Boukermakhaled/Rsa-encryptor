@@ -1,59 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>تشفير وفك تشفير ECC</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    
-    <div class="top-bar" id="top-bar">
-      <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle Dark Mode">🌙</button>
-      <button id="langToggle" class="lang-toggle">English</button>
-    </div>
-
-    <div class="main-box" id="mainBox" role="main">
-      <h1 class="main-title" id="title">تشفير وفك تشفير ECC</h1>
-
-      <div class="input-group">
-        <label for="privateKey" id="keyLabel" class="input-label">مفتاح خاص (رقم):</label>
-        <input type="text" id="privateKey" class="file-input-box" placeholder="أدخل مفتاح التشفير/الفك" />
-      </div>
-
-      <div class="input-group">
-        <label for="plainText" id="plainLabel" class="input-label">النص الأصلي:</label>
-        <textarea id="plainText" class="file-input-box" placeholder="أدخل النص هنا..."></textarea>
-      </div>
-
-      <button id="encryptBtn" class="action-btn">تشفير</button>
-
-      <div class="input-group">
-        <label for="encryptedText" id="encryptedLabel" class="input-label">النص المشفر:</label>
-        <textarea id="encryptedText" class="file-input-box" readonly placeholder="سيظهر النص المشفر هنا..."></textarea>
-      </div>
-
-      <div class="input-group">
-        <label for="cipherInput" id="cipherInputLabel" class="input-label">أدخل النص المشفر لفك التشفير:</label>
-        <textarea id="cipherInput" class="file-input-box" placeholder="ألصق النص المشفر هنا..."></textarea>
-      </div>
-
-      <button id="decryptBtn" class="action-btn">فك التشفير</button>
-
-      <div class="input-group">
-        <label for="decryptedText" id="decryptedLabel" class="input-label">النص المفكوك:</label>
-        <textarea id="decryptedText" class="file-input-box" readonly placeholder="سيظهر النص المفكوك هنا..."></textarea>
-      </div>
-
-      <div class="error" id="error"></div>
-    </div>
-
-
-  </div>
-
-  <script src="script.js">
-    
-  </script>
-</body>
-</html>

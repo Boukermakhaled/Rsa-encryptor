@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ECC Encryption and Decryption - Dark Mode</title>
+<link rel="stylesheet" href="style2.css">
+
+</head>
+<body>
+  <div class="container" role="main" aria-label="ECC Encryption and Decryption Interface">
+    <h1>ECC Encryption and Decryption - Dark Mode</h1>
+
+    <section aria-labelledby="curve-keys-header">
+      <h2 id="curve-keys-header">1. Curve Parameters and Keys</h2>
+      <div class="row">
+        <div>
+          <label for="curveA">Parameter a (a)</label>
+          <input type="number" id="curveA" value="2" autocomplete="off" />
+        </div>
+        <div>
+          <label for="curveB">Parameter b (b)</label>
+          <input type="number" id="curveB" value="3" autocomplete="off" />
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label for="curveP">Prime modulus (p)</label>
+          <input type="number" id="curveP" value="97" autocomplete="off" />
+        </div>
+        <div>
+          <label for="generatorG">Generator Point G = (x, y)</label>
+          <input type="text" id="generatorG" value="3,6" autocomplete="off" />
+          <div class="note">Enter coordinates separated by a comma</div>
+        </div>
+      </div>
+      <div>
+        <label for="privateN">Private Key n (n &lt; p - 1)</label>
+        <input type="number" id="privateN" value="10" autocomplete="off" />
+      </div>
+      <button id="computePublicKeyBtn" aria-describedby="publicKeyOutput" type="button">Calculate Public Key Pu = n * G</button>
+      <div class="output" id="publicKeyOutput" tabindex="0" aria-live="polite" aria-atomic="true">Public key will appear here</div>
+    </section>
+
+    <section aria-labelledby="message-header">
+      <h2 id="message-header">2. Message <button id="convertMsgBtn" type="button" aria-label="Convert Text to Elliptic Curve Point">Convert Text to Point</button></h2>
+      <div class="row message-row" style="align-items:center;">
+        <div style="flex:3;">
+          <input type="text" id="messageText" placeholder="Enter your message text" value="Hello" autocomplete="off" aria-describedby="msgNote" />
+          <div class="note" id="msgNote">Text will be converted to a point on the curve</div>
+        </div>
+        <div style="flex:2;" class="message-row-div">
+          <label for="messageM">Extracted Point M</label>
+          <input type="text" id="messageM" placeholder="Point representing message" readonly aria-live="polite" aria-atomic="true" />
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="encryption-header">
+      <h2 id="encryption-header">3. Encryption</h2>
+      <div class="row">
+        <div>
+          <label for="kValue">Value k (1 ≤ k ≤ p - 1)</label>
+          <input type="number" id="kValue" value="20" autocomplete="off" />
+        </div>
+        <div>
+          <label for="publicKeyInput">Public Key Pu (Calculate above first)</label>
+          <input type="text" id="publicKeyInput" readonly placeholder="Pu appears here" aria-live="polite" aria-atomic="true" />
+        </div>
+      </div>
+      <button id="encryptBtn" type="button" aria-describedby="encryptionOutput">Encrypt Message</button>
+      <div class="output" id="encryptionOutput" tabindex="0" aria-live="polite" aria-atomic="true">Encrypted text will appear here</div>
+    </section>
+
+    <section aria-labelledby="decryption-header">
+      <h2 id="decryption-header">4. Decryption</h2>
+      <button id="decryptBtn" type="button" aria-describedby="decryptionOutput">Decrypt Message</button>
+      <div class="output" id="decryptionOutput" tabindex="0" aria-live="polite" aria-atomic="true">Decrypted message will appear here</div>
+    </section>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
