@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RSA Encryption and Decryption</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Custom Alert Structure -->
+  <div class="custom-alert-overlay" id="customAlert">
+    <div class="custom-alert">
+      <h3 id="alertTitle">Title</h3>
+      <p id="alertMessage">Message goes here</p>
+      <button class="custom-alert-btn" id="alertOkBtn">OK</button>
+    </div>
+  </div>
+  <!-- Progress bar -->
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop" title="Go to top">↑</button>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#" class="navbar-brand">RSA Tool</a>
+    <div class="navbar-links">
+      <a href="#" class="navbar-link">Home</a>
+      <a href="#about" class="navbar-link" id="aboutLink">About</a>
+      <a href="#tutorial" class="navbar-link" id="tutorialLink">Tutorial</a>
+      <a href="#contact" class="navbar-link" id="contactLink">Contact</a>
+    </div>
+  </nav>
+
+  <div class="content-wrapper">
+    <div class="top-bar">
+      <div>
+        <label for="languageSelector">Language:</label>
+        <select id="languageSelector" aria-label="Select Language">
+          <option value="en">English</option>
+          <option value="ar">العربية</option>
+        </select>
+      </div>
+      <button id="darkModeToggle" style="background: transparent; border: 0px; padding: 10px; border-bottom: 1px solid white;" aria-label="Toggle Dark Mode" title="Toggle Dark Mode">🌙</button>
+    </div>
+
+    <div class="main-box" id="mainBox" role="main">
+      <h1 class="main-title" id="title">RSA Encryption</h1>
+
+      <div>
+        <label for="p" id="labelP">Enter prime number P:</label>
+        <input type="number" id="p" class="file-input-box" required autocomplete="off" />
+      </div>
+
+      <div>
+        <label for="q" id="labelQ">Enter prime number Q:</label>
+        <input type="number" id="q" class="file-input-box" required autocomplete="off" />
+      </div>
+
+      <div>
+        <label for="e" id="labelE">Enter public exponent E:</label>
+        <input type="number" id="e" class="file-input-box" value="5" required autocomplete="off" />
+      </div>
+
+      <div>
+        <label for="message" id="labelMessage">Enter message to encrypt (numeric):</label>
+        <input type="number" id="message" class="file-input-box" required autocomplete="off" />
+      </div>
+
+      <button id="encryptBtn" class="action-btn" aria-describedby="encryptDesc">Encrypt Message</button>
+      <div id="encryptDesc" style="display:none;">Click to encrypt the numeric message based on RSA inputs.</div>
+
+      <div class="result-container">
+        <h2 class="result-title" id="encryptedTitle">Encrypted Message</h2>
+        <p id="encryptedMessage" class="output-msg" aria-live="polite"></p>
+      </div>
+
+      <h2 class="section-title" id="decryptionTitle">RSA Decryption</h2>
+
+      <div>
+        <label for="d" id="labelD">Enter private exponent D:</label>
+        <input type="number" id="d" class="file-input-box" required autocomplete="off" />
+      </div>
+
+      <div>
+        <label for="n_decrypt" id="labelNdecrypt">Enter modulus N:</label>
+        <input type="number" id="n_decrypt" class="file-input-box" required autocomplete="off" />
+      </div>
+
+      <div>
+        <label for="encryptedInput" id="labelEncryptedInput">Enter encrypted message to decrypt:</label>
+        <input type="text" id="encryptedInput" class="file-input-box" required autocomplete="off" />
+      </div>
+
+      <button id="decryptBtn" class="action-btn" aria-describedby="decryptDesc">Decrypt Message</button>
+      <div id="decryptDesc" style="display:none;">Click to decrypt the encrypted message based on your inputs.</div>
+
+      <div class="result-container">
+        <h2 class="result-title" id="decryptedTitle">Decrypted Message</h2>
+        <p id="decryptedMessage" class="output-msg" aria-live="polite"></p>
+      </div>
+      <div class="tooltip" tabindex="0" aria-label="How to Use RSA Encryption">
+        ❓ How to Use
+        <div class="tooltiptext" role="tooltip" id="tooltiptext">
+          <strong>RSA Encryption and Decryption Guide:</strong>
+          <ul>
+            <li>Enter two prime numbers P and Q.</li>
+            <li>Enter a public exponent E coprime to (P-1)*(Q-1).</li>
+            <li>Enter your numeric message to encrypt and click "Encrypt Message".</li>
+            <li>The encrypted message will appear below.</li>
+            <li>For decryption, provide the private exponent D and modulus N (usually P*Q).</li>
+            <li>Enter the encrypted message and click "Decrypt Message" to get the original message.</li>
+            <li>Use the language selector to switch between English and Arabic.</li>
+            <li>Toggle dark mode using the moon icon.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="main.js"></script>
+   
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
